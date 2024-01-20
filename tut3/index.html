@@ -31,13 +31,27 @@ let obja = {
     }
     
 }
-document.addEventListener("click", function click(){
-    console.log("clicked");
-    // alert("RAM RAM JI ")
-    let conf = confirm ("SACH MEIKARDE??")
-    console.log(conf)
-})
+// document.addEventListener("click", function click(){
+//     console.log("clicked");
+//     // alert("RAM RAM JI ")
+//     let conf = confirm ("SACH MEIKARDE??")
+//     console.log(conf)
+// })
 
+console.log(this);
+let myobj = {
+    a:this,
+    myfunc : function(number){
+        console.log("this");
+        }
+}
+
+myobj.myfunc();
+console.log(myobj.a)
+setTimeout(() => {
+    console.log(" pehle mai aaunga")
+}, 3000);
+console.log("nah mei pehle aaunga")
 
 
     </script>
