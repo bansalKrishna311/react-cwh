@@ -7,6 +7,13 @@ import {useState} from 'react';
 
 // import React, { useState } from 'react'
 import Alert from './components/Alert';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
@@ -38,13 +45,20 @@ function App() {
 
   return (
     <>
+     <Router>
       <Navbar title="TextUtils" mode={mode} ToggleMode={ToggleMode} />
      <Alert alert = {alert}/>
-      <div className="container">
-        <TextForm heading="Enter the text to analyze Below" mode={mode}  showAlert= {showAlert} />
-      </div>
-
-      <About />
+      
+=
+      <Switch>
+          <Route path="/about">
+            <About />       
+          </Route>
+          <Route path="/">
+          <TextForm heading="Enter the text to analyze Below" mode={mode}  showAlert= {showAlert} />
+          </Route>
+        </Switch>
+        </Router>
     </>
   );
 }
