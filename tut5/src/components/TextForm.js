@@ -39,13 +39,14 @@ export default function TextForm(props) {
   const [Text, setText] = useState("Enter Texrt Here ");
   return (
     <>
-      <div className="container">
+      <div className="container" style={{ backgroundColor: props.mode === "dark" ? "#313840" : "white", color: props.mode === "dark" ? "white" : "black" }}>
         <h1>{props.heading} </h1>
         <div className="mb-3">
           <textarea
             className="form-control"
             value={Text}
             id="myBox"
+            style={{ backgroundColor: props.mode === "dark" ? "#313840" : "white", color: props.mode === "dark" ? "white" : "black" }}
             rows="8"
             onChange={HandleOnChange}
           ></textarea>
@@ -66,7 +67,8 @@ export default function TextForm(props) {
           Respace
         </button>
       </div>
-      <div className="container my-4">
+            
+      <div className="container my-4 " style={{ backgroundColor: props.mode === "dark" ? "#313840" : "white", color: props.mode === "dark" ? "white" : "black" }}  >
         <h2>Your Text Summary</h2>
         <p>
           {Text.split(" ").length} Words and {Text.length} Characters
