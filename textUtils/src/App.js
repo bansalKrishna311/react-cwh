@@ -3,10 +3,6 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/about';
 import {useState} from 'react';
-
-
-
-// import React, { useState } from 'react'
 import Alert from './components/Alert';
 import React from "react";
 import {
