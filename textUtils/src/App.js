@@ -5,12 +5,13 @@ import About from './components/about';
 import {useState} from 'react';
 
 
+
 // import React, { useState } from 'react'
 import Alert from './components/Alert';
 import React from "react";
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
@@ -47,17 +48,13 @@ function App() {
     <>
      <Router>
       <Navbar title="TextUtils" mode={mode} ToggleMode={ToggleMode} />
-     <Alert alert = {alert}/>
-      
-=
-      <Switch>
-          <Route path="/about">
-            <About />       
-          </Route>
-          <Route path="/">
-          <TextForm heading="Enter the text to analyze Below" mode={mode}  showAlert= {showAlert} />
-          </Route>
-        </Switch>
+      <Alert alert={alert} />
+
+      <Routes>
+  <Route path="/about" element={<About />} />
+  <Route path="/" element={<TextForm heading="Enter the text to analyze Below" mode={mode} showAlert={showAlert} />} />
+</Routes>
+
         </Router>
     </>
   );
